@@ -1,0 +1,22 @@
+{
+  "name": "njs-homework-06-gzip",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "jsdom": "^26.0.0",
+    "memfs": "^4.17.0",
+    "unionfs": "^4.5.4",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:files": "node scripts/check-files.js"
+  },
+  "type": "module"
+}

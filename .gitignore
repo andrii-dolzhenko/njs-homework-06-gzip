@@ -1,0 +1,18 @@
+### Custom .gitignore template
+# Folders
+.idea/
+.vscode/
+node_modules/
+dist/
+build/
+
+# Files
+.DS_Store
+*.log
+*.js.map
+*.d.ts
+
+
+# Local Gzip output
+/src/files/*.gz
+/src/files/source_decompressed*.txt
