@@ -14,6 +14,10 @@ npm run test:files
 
 `npm test` runs the 14 original Vitest tests. `npm run test:files` checks real Gzip files in a temporary directory and removes them after the run.
 
+## Live demo
+
+[Open Gzip Playground](https://andrii-dolzhenko.github.io/njs-homework-06-gzip/). The GitHub Pages version processes files in your browser without uploading them.
+
 ## Local demo
 
 Run `npm run dev` and open [http://127.0.0.1:3000/](http://127.0.0.1:3000/). Choose a file up to 256 KiB or click **Use sample file**, then compress it. Click **Use in decompression** to pass the archive to the second panel, restore the file, and download either result.
