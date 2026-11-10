@@ -16,7 +16,8 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:files": "node scripts/check-files.js"
+    "test:files": "node scripts/check-files.js",
+    "dev": "node demo/server.js"
   },
   "type": "module"
 }
