@@ -17,6 +17,21 @@ function formatSize(bytes) {
   return bytes < 1024 ? `${bytes} B` : `${(bytes / 1024).toFixed(1)} KiB`
 }
 
+async function processFile(mode, file) {
+  if (document.documentElement.dataset.gzipRuntime === 'browser') {
+    const { processBrowserFile } = await import('./browser-gzip.js')
+    return processBrowserFile(mode, file)
+  }
+
+  const response = await fetch(`./api/${mode}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/octet-stream' },
+    body: file
+  })
+  if (!response.ok) throw new Error(await response.text())
+  return response.blob()
+}
+
 let sample
 let compressedFile
 let restoreInput
@@ -53,14 +68,7 @@ function wireForm(mode, getFile) {
     showStatus(mode, 'Processing…')
 
     try {
-      const response = await fetch(`./api/${mode}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/octet-stream' },
-        body: file
-      })
-      if (!response.ok) throw new Error(await response.text())
-
-      const result = await response.blob()
+      const result = await processFile(mode, file)
       const filename = mode === 'compress'
         ? `${file.name}.gz`
         : file.name.replace(/\.gz$/i, '') || 'restored-file'
