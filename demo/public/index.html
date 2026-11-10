@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compress and restore a file using Gzip and Node.js streams.">
+  <title>Gzip Playground · Node.js Homework 06</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand"><span class="brand-mark" aria-hidden="true">gz</span> Gzip Playground</span>
+    <span class="site-note">LOCAL NODE.JS DEMO</span>
+  </header>
+  <main>
+    <div class="intro">
+      <p class="eyebrow">NODE.JS HOMEWORK 06</p>
+      <h1>Pack it. Bring it back<span>.</span></h1>
+      <p>Turn a file into a Gzip archive, then restore it with Node.js streams.</p>
+      <p class="note">Files are processed on your computer. Use a file up to 256 KiB or try the included sample.</p>
+    </div>
+
+    <noscript><p>Enable JavaScript to use this demo.</p></noscript>
+    <div class="workspace">
+      <section class="panel" aria-labelledby="compress-title">
+        <p class="eyebrow">01 / COMPRESS</p>
+        <h2 id="compress-title">Make a Gzip file</h2>
+        <p>Choose a file or load the assignment’s sample.</p>
+        <form id="compress-form" inert>
+          <label for="compress-file">Source file</label>
+          <input id="compress-file" type="file">
+          <button id="sample" class="secondary" type="button">Use sample file</button>
+          <button type="submit">Compress to .gz</button>
+        </form>
+        <p class="status" id="compress-status" role="status"></p>
+        <div class="actions">
+          <a id="compress-download" class="button" hidden>Download .gz</a>
+          <button id="use-result" class="secondary" type="button" hidden>Use in decompression</button>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="decompress-title">
+        <p class="eyebrow">02 / DECOMPRESS</p>
+        <h2 id="decompress-title">Restore the file</h2>
+        <p>Choose a Gzip archive or use the result from step 1.</p>
+        <form id="decompress-form" inert>
+          <label for="decompress-file">Gzip archive</label>
+          <input id="decompress-file" type="file" accept=".gz,application/gzip">
+          <button type="submit">Decompress file</button>
+        </form>
+        <p class="status" id="decompress-status" role="status"></p>
+        <div class="actions">
+          <a id="decompress-download" class="button" hidden>Download restored file</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>© 2026 Andrii Dolzhenko. All Rights Reserved.</footer>
+</body>
+</html>

@@ -14,6 +14,12 @@ npm run test:files
 
 `npm test` runs the 14 original Vitest tests. `npm run test:files` checks real Gzip files in a temporary directory and removes them after the run.
 
+## Local demo
+
+Run `npm run dev` and open [http://127.0.0.1:3000/](http://127.0.0.1:3000/). Choose a file up to 256 KiB or click **Use sample file**, then compress it. Click **Use in decompression** to pass the archive to the second panel, restore the file, and download either result.
+
+The demo runs on your computer and uses temporary files.
+
 ## Usage
 
 `compressFile(filePath)` returns the path to the Gzip file. `decompressFile(compressedFilePath, destinationFilePath)` returns the path to the restored file. Both reject with the underlying error if an operation fails.
